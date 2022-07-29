@@ -1,0 +1,373 @@
+
+#body
+{
+  height:100%;
+  background-image: linear-gradient(30deg, rgba(232, 94, 40, 0.8),rgb(232, 222, 40, 0.8), rgb(0, 129, 203, 0.5), rgb(40, 221, 232, 0.8),rgb(0, 181, 212, 0.8), rgb(0, 190, 95, 0.8), rgb(190, 100, 95, 0.8));
+
+  padding-bottom:50px;
+  background-attachment: fixed;
+
+  overflow:scroll;
+}
+
+/* https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load */
+body.preload *{
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+
+  
+p
+{
+  font-family: 'Shrikhand', cursive;
+}
+
+
+.title
+{
+  /*font-family: 'Shrikhand', cursive;*/
+  line-height: 1.8rem;
+  font-size: 1.75em;
+
+  color:#222;
+  position:relative;
+  margin-top:-8px;
+  margin-left:15px;
+}
+
+
+.cell-container
+{
+  margin:4px;
+  margin-left:2px;
+  width:45px;
+  height:45px;
+  border:2px solid #222;
+  border-radius:5px;
+  box-shadow: 1px 1px 5px #333;
+  background-image: linear-gradient(0deg, rgba(155, 155, 155,0.2), rgba(200, 200, 200,0.2));
+  box-shadow: 4px 4px 6px #888 inset, 2px 2px 2px #555;
+}
+
+
+.cell
+{
+  margin-left:0px;
+  /*cursor: pointer;*/
+  width:100%;
+  height:100%;
+
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+/* ********************************************************************** */
+
+.rule-container
+{
+  position:relative;
+  padding:10px;
+}
+
+.rule-container-1-2
+{
+  /*width:100%;*/
+  background-color: tomato;
+  height:60px;
+  width:180px;
+}
+
+.grid-container
+{
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius:10px;
+  opacity:1;
+}
+
+.grid-container-1-2
+{
+  height:56px;
+  width:112px;
+}
+
+
+.mapsto
+{
+  font-size:2em;
+  position:absolute;
+  margin-left:160px;
+  top:12px;
+  display:block;
+}
+
+
+/* ********************************************************************** */
+
+
+#return-button-container
+{
+  position:absolute;
+  top:10px; right:10px;
+  width:35px; height:35px;
+
+}
+
+#return-button
+{
+  position: absolute;
+  line-height:24px;
+  padding-left: 1px;
+
+  text-align:center;
+  text-decoration:none;
+  width:100%; height:100%;
+  font-size:3.25em;
+  border-radius:5px;
+  border:1px solid;
+  border-color:#111111bb;
+  z-index:1;
+}
+
+
+#rule-container-1
+{
+  width:450px;
+  height:100px;
+  background-color: transparent;
+  margin:0 auto;
+}
+
+#combine-label{ position:absolute; margin: 0 auto; margin-left:4%; z-index:2; }
+#merge-label{ position:absolute; margin: 0 auto; margin-left:41%; z-index:2; }
+#cancel-label{ position:absolute; margin: 0 auto; margin-left:77%; z-index:2; }
+
+#grid-1{ display:block; margin-top:25px; cursor:pointer; }
+#grid-2{ display:block; margin-left:36%; margin-top:-56px; cursor:pointer; }
+#grid-3{ display:block; margin-left:74%; margin-top:-56px; cursor: pointer; }
+
+#hr3{ margin:0 auto; width:80%; left:10%; margin-top:20px; cursor:pointer; }
+
+#rule-container-2
+{
+  width:450px;
+  height:100px;
+  background-color: transparent;
+  margin:0 auto;
+}
+
+@media (max-width:500px)
+{
+  #rule-container-1{width:100%; height:100%; background-color: transparent; margin-top: -25px;}
+  #example-action-labels{ background-color: purple; margin-top:10px; position:relative; }
+
+  #combine-label{ position:relative; width:96px; text-align: center; background-color: transparent; margin:0 auto;}
+  #merge-label{ position:relative; width:96px; text-align: center; background-color: transparent; margin:0 auto; top:70px;}
+  #cancel-label{ position:relative; width:96px; text-align: center; background-color: transparent; margin:0 auto; top:140px;}
+  
+  #grid-1{ position:relative; background-color: transparent; margin:0 auto; top:-43px;}
+  #grid-2{ position:relative; background-color: transparent; margin:0 auto; right:40px; top:50px;}
+  #grid-3{ position:relative; background-color: transparent; margin:0 auto; right:82px; top:142px;}
+
+  #example-actions-container{ background-color: transparent; width:112px; margin:0 auto;}
+
+  #hr3 { margin-top:160px; }
+
+  #rule-container-2{width:100%; height:100%; background-color: transparent; margin-top: 50px;}
+
+  #grid-4{ position:relative; background-color: transparent; margin:0 auto; top:-43px;}
+  #grid-5{ position:relative; background-color: transparent; margin:0 auto; right:40px; top:50px;}
+  #grid-6{ position:relative; background-color: transparent; margin:0 auto; right:82px; top:142px;}
+
+  .foot-pad{ position:relative; background-color: transparent; width:100%; margin-top:175px;}
+}
+
+
+
+
+/* *********************************************************************************************** */
+
+
+#grid-1:hover .combine-left-cell
+{
+  z-index:1;
+  animation: animate-combine-left-cell 4s linear infinite;
+}
+
+#grid-1:hover .combine-right-cell
+{
+  z-index:1;
+  animation: animate-combine-right-cell 4s linear infinite;
+}
+
+@keyframes animate-combine-left-cell
+{
+  0%  {background-image: url('../resources/white-arrows-128/8.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/8.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+@keyframes animate-combine-right-cell
+{
+  0%  {background-image: url('../resources/white-arrows-128/3.png');}
+  24% {background-image: url('../resources/white-arrows-128/3.png');}
+  25% {background-image: url('../resources/white-arrows-128/11.png');}
+  100% {background-image: url('../resources/white-arrows-128/11.png');}
+}
+
+#grid-2:hover .cancel-left-cell
+{
+  z-index:1;
+  animation: animate-cancel-left-cell 4s linear infinite;
+  /*animation-delay: 400ms;*/
+}
+
+#grid-2:hover .cancel-right-cell
+{
+  z-index:1;
+  animation: animate-cancel-right-cell 4s linear infinite;
+  /*animation-delay: 400ms;*/
+}
+
+@keyframes animate-cancel-left-cell
+{
+  0% {background-image: url('../resources/white-arrows-128/3.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/3.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+@keyframes animate-cancel-right-cell
+{
+  0% {background-image: url('../resources/white-arrows-128/8.png');}
+  24% {background-image: url('../resources/white-arrows-128/8.png');}
+  25% {background-image: url('../resources/white-arrows-128/0.png');}
+  100% {background-image: url('../resources/white-arrows-128/0.png');}
+}
+
+#grid-3:hover .merge-left-cell
+{
+  z-index:1;
+  animation: animate-merge-left-cell 4s linear infinite;
+  /*animation-delay: 400ms;*/
+}
+
+@keyframes animate-merge-left-cell
+{
+  0% {background-image: url('../resources/white-arrows-128/3.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/3.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+
+
+
+
+/* *********************************************************************************************** */
+
+
+#grid-4{ cursor:pointer; }
+#grid-5{ cursor:pointer; }
+#grid-6{ cursor:pointer; }
+
+#grid-4:hover .combine-left-cell-2
+{
+  z-index:1;
+  animation: animate-combine-left-cell-2 4s linear infinite;
+}
+
+#grid-4:hover .combine-right-cell-2
+{
+  z-index:1;
+  animation: animate-combine-right-cell-2 4s linear infinite;
+}
+
+@keyframes animate-combine-left-cell-2
+{
+  0%  {background-image: url('../resources/white-arrows-128/6.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/6.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+@keyframes animate-combine-right-cell-2
+{
+  0%  {background-image: url('../resources/white-arrows-128/11.png');}
+  24% {background-image: url('../resources/white-arrows-128/11.png');}
+  25% {background-image: url('../resources/white-arrows-128/17.png');}
+  100% {background-image: url('../resources/white-arrows-128/17.png');}
+}
+
+
+#grid-5:hover .combine-left-cell-3
+{
+  z-index:1;
+  animation: animate-combine-left-cell-3 4s linear infinite;
+}
+
+#grid-5:hover .combine-right-cell-3
+{
+  z-index:1;
+  animation: animate-combine-right-cell-3 4s linear infinite;
+}
+
+@keyframes animate-combine-left-cell-3
+{
+  0%  {background-image: url('../resources/white-arrows-128/17.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/17.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+@keyframes animate-combine-right-cell-3
+{
+  0%  {background-image: url('../resources/white-arrows-128/23.png');}
+  24% {background-image: url('../resources/white-arrows-128/23.png');}
+  25% {background-image: url('../resources/white-arrows-128/40.png');}
+  100% {background-image: url('../resources/white-arrows-128/40.png');}
+}
+
+
+#grid-6:hover .cancel-left-cell-2
+{
+  z-index:1;
+  animation: animate-cancel-left-cell-2 4s linear infinite;
+  /*animation-delay: 400ms;*/
+}
+
+#grid-6:hover .cancel-right-cell-2
+{
+  z-index:1;
+  animation: animate-cancel-right-cell-2 4s linear infinite;
+  /*animation-delay: 400ms;*/
+}
+
+@keyframes animate-cancel-left-cell-2
+{
+  0% {background-image: url('../resources/white-arrows-128/40.png'); margin-left:0px; z-index:2;}
+  24% {background-image: url('../resources/white-arrows-128/40.png'); margin-left:56px;}
+  25% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+  100% {background-image: url('../resources/white-arrows-128/0.png'); margin-left:56px;}
+}
+
+@keyframes animate-cancel-right-cell-2
+{
+  0% {background-image: url('../resources/white-arrows-128/40.png');}
+  24% {background-image: url('../resources/white-arrows-128/40.png');}
+  25% {background-image: url('../resources/white-arrows-128/0.png');}
+  100% {background-image: url('../resources/white-arrows-128/0.png');}
+}
+

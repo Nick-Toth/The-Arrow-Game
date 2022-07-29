@@ -1,0 +1,568 @@
+
+#body
+{
+  height:100%;
+  background-image: linear-gradient(30deg, rgba(232, 94, 40, 0.8),rgb(232, 222, 40, 0.8), rgb(0, 129, 203, 0.5), rgb(40, 221, 232, 0.8),rgb(0, 181, 212, 0.8), rgb(0, 190, 95, 0.8), rgb(190, 100, 95, 0.8));
+
+  padding-bottom:50px;
+  background-attachment: fixed;
+
+  overflow:scroll;
+}
+
+/* https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load */
+body.preload *{
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+
+p
+{
+  font-family: 'Shrikhand', cursive;
+}
+
+
+.title
+{
+  /*font-family: 'Shrikhand', cursive;*/
+  line-height: 1.8rem;
+  font-size: 2rem;
+
+  color:#222;
+  position:relative;
+
+  margin-left:25px;
+}
+
+
+
+#sub-title
+{
+  font-size:0.75rem;
+  line-height: 0.75rem;
+  margin:0 auto;
+  margin-top:-10px;
+  margin-left:25px;
+
+}
+
+#ag_container
+{
+  border:2px solid #222;
+  border-radius:5px;
+  margin:auto;
+  margin-top:5vh;
+  /*background-color:#ffb545;*/
+  background-image: linear-gradient(0deg, rgba(125, 75, 125, 0.5), rgba(125, 125, 175, 0.5));
+  box-shadow: 4px 4px 6px #555 inset, 4px 4px 4px #777, -2px -2px 8px #333 inset;
+
+  padding:15px;
+  width:330px; /* 30 extra pixels for padding; (5px,5px,5px,5px,5px,5px) */
+  max-width:330px;
+  height:480px;
+
+  overflow: hidden;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+
+
+#rules-button-container
+{
+  position:absolute;
+  top:10px; right:10px;
+  width:35px; height:35px;
+  color:#111111bb;
+}
+
+#rules-button
+{
+  position: absolute;
+  line-height:32px;
+  padding-left: 2px;
+
+  text-align:center;
+  text-decoration:none;
+  width:100%; height:100%;
+  font-size:2.25em;
+  border-radius:5px;
+  border:1px solid;
+  border-color:#111111bb;
+  z-index:1;
+
+}
+
+#left_fields_container
+{
+  /*background-color:yellow;*/
+  min-height:85px;
+  width:220px;
+}
+
+
+#score_container
+{
+  height:2em;
+  font-size:1.4em;
+}
+
+#score-label
+{
+  position:absolute;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+}
+
+#score
+{
+  margin-left:80px;
+  margin-top:1px;
+  /*background-color:red;*/
+  width:140px;
+  min-width:125px;
+  position:absolute;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+}
+
+
+#swap_container
+{
+  text-align: center;
+  margin-top:2vh;
+  position:absolute;
+  /*background-color:blue;*/
+}
+
+#swap-label
+{
+  color:#333;
+  margin-top:-37px;
+  margin-left:-2px;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+}
+
+#swapButton
+{
+  background-color:transparent;
+  border-color:transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+
+#swapButtonImage
+{
+  width: 3vw;
+  height: 3vw;
+  min-width:50px;
+  min-height:50px;
+  overflow: visible;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+}
+
+
+#swapButtonImage:hover {
+
+  opacity:0.9;
+  filter: none;
+  /*-webkit-filter: grayscale(50%);
+  background-color: maroon;*/
+}
+
+
+#next_arrows_container
+{
+  margin-top:5px;
+  overflow: hidden;
+  position: relative;
+  float:right;
+  margin-right:5px;
+}
+
+
+#next_arrows
+{
+  float:right;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+#ag_grid_container
+{
+  min-width:300px;
+  min-height:300px;
+  overflow:visible;
+  block-size: fit-content;
+}
+
+#ag_grid
+{
+  width: 100%;
+  height: 100%;
+  block-size: fit-content;
+  position: absolute;
+}
+
+
+.cell_container
+{
+  margin:4px;
+  margin-left:2px;
+  margin-top:2px;
+  width:56px;
+  height:56px;
+  border:2px solid #222;
+  border-radius:5px;
+  box-shadow: 1px 1px 5px #333;
+  background-image: linear-gradient(0deg, rgba(155, 155, 155,0.2), rgba(200, 200, 200,0.2));
+  box-shadow: 4px 4px 6px #666 inset, 2px 2px 2px #555;
+}
+
+
+.cell
+{
+  margin-top:1px;
+  margin-left:2%;
+  cursor: pointer;
+  width:100%;
+  height:100%;
+  background-image: none;/*url("./resources/pink-arrows/1.png");*/
+  transform:scale(0.96);
+  background-size: 100% 100%;
+  background-color: transparent;
+  z-index:2;
+  display:block;
+}
+
+
+#next_arrow_container
+{
+  /*background-image: url("./resources/pink-arrows/1.png");*/
+  background-size: 100% 100%;
+  border:2px solid #222;
+  border-radius:5px;
+  box-shadow: 3px 3px 3px #666 inset;
+
+  animation: indicate-next-arrow 1250ms ease-in-out 1;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes indicate-next-arrow
+{
+  0%{
+    border-color:#222;
+  }
+  25%{
+    border-color:#52d499;
+  }
+  45%{
+    border-color:#222;
+  }
+  60%{
+    border-color:#52d499;
+  }
+  100%{
+    border-color:#222;
+  }
+}
+
+
+#next_next_arrow_container
+{
+  /*background-image: url("./resources/pink-arrows/1.png");*/
+  background-size: 100% 100%;
+  border:2px solid #222;
+  border-radius:5px;
+  margin-top:10px;
+  margin-left:20px;
+  box-shadow: 3px 3px 3px #666 inset;
+}
+
+
+#next_arrow
+{
+  cursor: pointer;
+  /*background-image: url("./resources/pink-arrows/1.png");*/
+  background-size: 100% 100%;
+  width:54px;
+  height:54px;
+  margin-left:2px;
+  margin-top:2px;
+}
+
+#next_next_arrow
+{
+  /*background-image: url("./resources/pink-arrows/1.png");*/
+  background-size: 100% 100%;
+  margin-left:1px;
+  margin-top:2px;
+
+  width:36px;
+  height:36px;
+}
+
+
+.draggable {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 0.5em;
+  margin: 10px 10px 10px 0;
+  border: 1px solid #222;
+  border-radius: 50%;
+}
+
+.droppable {
+  padding: 0.5em;
+  float: left;
+  margin: 10px;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+/* ********************************************************************** */
+
+
+#bottom-pannel
+{
+  position:absolute;
+  margin-top:15px;
+  width:100%;
+  padding:25px;
+}
+
+
+#arrow-choice-container
+{
+  /*background-color:red;*/
+  margin:0 auto;
+  margin-top:15px;
+  width:330px;
+  height:150px;
+}
+
+
+.arrow-choice-cell-container
+{
+  background-color: #ddd;
+  width:56px;
+  height:56px;
+  border:1px solid #222;
+
+  border-radius:5px;
+  /*box-shadow: 1px 1px 1px #333;*/
+  /*background-image: linear-gradient(0deg, rgb(155, 155, 155), rgb(200, 200, 200));*/
+
+  box-shadow: 5px 3px 8px #000,       0px 0px 0px #fff,
+              0px 0px 0px #fff inset, 0px 0px 0px #fff inset;
+}
+
+
+.arrow-button-press
+{
+  animation: arrow-press 300ms ease-in 1;
+}
+
+.arrow-button-unpress
+{
+  animation: arrow-unpress 300ms ease-in 1;
+}
+
+@keyframes arrow-press {
+  0%{
+    box-shadow: 5px 3px 8px #000,       0px 0px 0px #fff,
+                0px 0px 0px #fff inset, 0px 0px 0px #fff inset;
+  }
+  50%{
+    box-shadow: 0px 0px 0px #fff,       0px 0px 0px #fff,
+                6px 6px 6px #aaa inset, 0px 0px 0px #fff inset;
+  }
+  100%{
+    box-shadow: 5px 3px 8px #000,       0px 0px 0px #fff,
+                0px 0px 0px #fff inset, 0px 0px 0px #fff inset;
+  }
+}
+
+
+@keyframes arrow-unpress {
+  0%{
+    box-shadow: 5px 3px 8px #000,       0px 0px 0px #fff,
+                0px 0px 0px #fff inset, 0px 0px 0px #fff inset;
+  }
+  50%{
+    box-shadow: 0px 0px 0px #fff,       0px 0px 0px #fff,
+                6px 6px 6px #aaa inset, 0px 0px 0px #fff inset;
+  }
+  100%{
+    box-shadow: 5px 3px 8px #000,       0px 0px 0px #fff,
+                0px 0px 0px #fff inset, 0px 0px 0px #fff inset;
+  }
+}
+
+
+
+.micro-arrow-color-button
+{
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+
+
+
+#reset-button-container
+{
+  /*position:absolute;
+  top:65px; right:80px;*/
+  margin-left:px;
+
+  background-color: transparent;
+  width: 60px;
+  height:30px;
+
+  cursor: pointer;
+}
+
+#reset-button
+{
+  background-color: transparent;
+
+  /*position: absolute;
+  line-height:32px;
+  padding-left: 2px;*/
+  line-height:28px;
+  text-align:center;
+  text-decoration:none;
+  
+  color:#222;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+  font-family: 'Shrikhand', cursive;
+  font-size:1.4em;
+  z-index:1;
+}
+
+
+#help-button-container-2
+{
+  margin-top:-30px;
+  margin-left:280px;
+  background-color: transparent;
+  width: 60px;
+  height:30px;
+
+  cursor: pointer;
+}
+
+#help-button-2
+{
+  background-color: transparent;
+
+  font-size:1.5em;
+  line-height:30px;
+  text-align:center;
+  text-decoration:none;
+
+  color:#222;
+  text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);
+  font-family: 'Shrikhand', cursive;
+
+  z-index:1;
+}
+
+
+/* Fix hovering on mobile devices. */
+@media (hover: hover) and (pointer: fine) {
+  #reset-button:hover{ color:#aaa; }
+  #help-button-2:hover{ color:#aaa; }
+}
+
+@media (hover: hover) {
+  .micro-arrow-color-button:hover { opacity:1; }
+}
+
+
+
+
+/* Narrow phones. e.g. galaxy fold */
+
+@media (max-height:630px) {
+  .title
+  {
+    animation: slow-hide 300ms ease-in-out 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (min-height:630px) {
+  .title
+  {
+    animation: slow-show 300ms ease-in-out 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slow-hide
+{
+  0% {
+    opacity:1;
+  }
+  100%
+  {
+    opacity:0;
+    display:none;
+  }
+}
+
+@keyframes slow-show
+{
+  0% {
+    opacity:0;
+  }
+  100%
+  {
+    opacity:1;
+    display:block;
+  }
+}
+
+
+#replay-button
+{
+  width:130px;
+  height:40px;
+
+  margin-left:85px;
+
+  text-align:center;
+  font-size:1.25rem;
+  font-weight:500;
+  color:#333;
+
+  background-color:rgba(40, 221, 232, 0.5);
+
+  border:2px solid rgb(40, 136, 232);
+  border-radius:10px;
+}
+#replay-button:hover
+{
+  background-color:rgba(40, 136, 232, 0.3);
+  color:#ddd;
+}
+

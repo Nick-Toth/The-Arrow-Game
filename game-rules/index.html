@@ -1,0 +1,140 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Arrow Game">
+  <title>The Arrow Game - Rules</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="stylesheet.css">
+  
+</head>
+
+<body id="body" class="unselectable preload">
+
+  <div id="title" style="padding-top:20px;">
+    <p class='title' style="text-shadow: 1px 1px rgb(82, 130, 132), 2px 2px rgb(85, 85, 85);">
+      How to Play
+    </p>
+  </div>
+
+  <div id="return-button-container">
+    <a id="return-button" href="../index.html"> &#215; </a>
+  </div>
+
+  <div class="rules-container" style="width:100%; position:absolute; top: 40px; left: 0; background-color:transparent;">
+
+    <hr style="width:80%;margin-left:10%;"></hr>
+
+    <p style="position:relative; margin-top:15px; width:80%; text-align:center; font-family: Roboto, serif; font-weight:500; margin-left:10%;">
+      Drag new arrows from the large container in the upper right corner of the game board, and drop them into the grid. The smaller container below that shows you your next new arrow. You can swap these two arrows with the &#128257; button located under your score, as long as the number indicated within that button is positive.
+    </p>
+
+    <hr style="width:80%;margin-left:10%;"></hr>
+
+
+    <p style="position:relative; margin-top:15px; width:80%; text-align:center; font-family: Roboto, serif; font-weight:500; margin-left:10%;">
+      Combine, cancel, and merge compatible pairs of adjacent arrows in the grid to earn points. The goal is to get as many points as possible until you can no longer place new arrows. Here are a few examples of these actions. Hover over or tap the examples to play an animation.
+    </p>
+
+    <div id="rule-container-1" class="rule-container">
+
+      <div id="example-action-labels" style="background-color: transparent;">
+        <p id="combine-label" class="example-action-label"> Combine </p>
+        <p id="merge-label" class="example-action-label"> Cancel </p>
+        <p id="cancel-label" class="example-action-label"> Merge </p>
+      </div>
+
+      <div id='example-actions-container'>
+        <div id="grid-1" class="grid-container grid-container-1-2">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-left-cell" style="background-image: url('../resources/white-arrows-128/8.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-right-cell" style="background-image: url('../resources/white-arrows-128/3.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+
+        <div id="grid-2" class="grid-container grid-container-1-2" style="margin-left:36%; position:absoloute; margin-top:-56px;">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell cancel-left-cell" style="background-image: url('../resources/white-arrows-128/3.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell cancel-right-cell" style="background-image: url('../resources/white-arrows-128/8.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+
+        <div id="grid-3" class="grid-container grid-container-1-2" style="margin-left:74%; position:absoloute; margin-top:-56px;">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell merge-left-cell" style="background-image: url('../resources/white-arrows-128/3.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell merge-right-cell" style="background-image: url('../resources/white-arrows-128/3.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr id="hr3"></hr>
+
+    <p style="position:relative; margin-top:15px; width:80%; text-align:center; font-family: Roboto, serif; font-weight:500; margin-left:10%;">
+      Merging arrows is a great way to keep the board clear, but combining and cancelling arrows will earn you more points. 
+      Here are a few more examples of how some arrows can be combined and cancelled.
+    </p>
+
+    <div id="rule-container-2" class="rule-container">
+
+      <div id='example-actions-container'>
+        <div id="grid-4" class="grid-container grid-container-1-2">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-left-cell-2" style="background-image: url('../resources/white-arrows-128/6.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-right-cell-2" style="background-image: url('../resources/white-arrows-128/11.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+
+        <div id="grid-5" class="grid-container grid-container-1-2" style="margin-left:36%; position:absoloute; margin-top:-56px;">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-left-cell-3" style="background-image: url('../resources/white-arrows-128/17.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell combine-right-cell-3" style="background-image: url('../resources/white-arrows-128/23.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+
+        <div id="grid-6" class="grid-container grid-container-1-2" style="margin-left:74%; position:absoloute; margin-top:-56px;">
+          <div style="margin-left:2px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell cancel-left-cell-2" style="background-image: url('../resources/white-arrows-128/40.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+          <div style="margin-left:57px; position:absolute;">
+            <div class="cell-container" onclick=""> <div class="cell cancel-right-cell-2" style="background-image: url('../resources/white-arrows-128/40.png'); width:40px; height:40px; margin-left:1px; margin-top:1px;"></div> </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-pad"></div>
+    </div>
+
+  </div>
+
+</body>
+
+<script src="/jquery/jquery.js"></script>
+
+<!-- FONTS FROM GOOGLE SERVER -->
+<link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;500&family=Shrikhand&display=swap" rel="stylesheet">
+
+
+<script type='text/javascript' src='./game-rules.js'></script>
+
+</html>
