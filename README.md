@@ -14,8 +14,7 @@ The Arrow Game is a fun, animated, and original browser-based puzzle game design
     
 ## Authors
 
-  Nick G. Toth
-  Piper Sheldon Young
+  Nick G. Toth and Piper Sheldon Young
 
 ## Version History
 
